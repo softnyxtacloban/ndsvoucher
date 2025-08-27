@@ -1,0 +1,10 @@
+euci set nodogsplash.@nodogsplash[0].binauth='/etc/nds_auth.sh'
+uci set nodogsplash.@nodogsplash[0].sessiontimeout='0'    # no global cap
+uci set nodogsplash.@nodogsplash[0].authidletimeout='0'   # don’t cut idle
+uci commit nodogsplash
+/etc/init.d/nodogsplash restart
+
+chmod +x /etc/nds/nds_auth.sh
+chmod +x /etc/nds/genvoucher.sh
+
+nano /etc/config/nodogsplash
